@@ -8,7 +8,7 @@ That's all you need. Attention: requires Java 11.
  
 ##### How to run:
 
-./mvnw clean package
+./mvnw clean package -Dmaven.test.skip=true
 
 java -jar target/ci-bot-mq-0.0.1-SNAPSHOT.jar \
 --bot.token="bot token here" \
