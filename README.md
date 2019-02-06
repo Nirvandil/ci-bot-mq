@@ -17,11 +17,15 @@ java -jar target/ci-bot-mq-0.0.1-SNAPSHOT.jar \
 --spring.boot.admin.client.username="admin name here" \
 --spring.boot.admin.client.password="admin password here" 
 
-#####Implemented REST API:
+#####Implemented REST API
+
 ######Send message to bot.chatId group or channel
+
 `POST /api/message body:
 {
   "message": "Some text here"
 }`
-######curl example: 
+
+######curl example
+
 `curl -XPOST -u username:password -H "Content-type:application/json" -d '{ "message": "Hello, world!" }' http://localhost:8081/api/message` 
