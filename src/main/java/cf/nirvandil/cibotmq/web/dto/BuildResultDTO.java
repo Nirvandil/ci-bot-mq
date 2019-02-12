@@ -13,9 +13,10 @@ public class BuildResultDTO {
     private Boolean successful;
     private Long buildNumber;
     private ChangesDTO changes;
+    private String buildResultKey;
 
     public static BuildResultDTO empty(Long id) {
-        return new BuildResultDTO(true, id, new ChangesDTO(Collections.emptyList()));
+        return new BuildResultDTO(true, id, new ChangesDTO(Collections.emptyList()), null);
     }
 
     @Override
@@ -33,7 +34,7 @@ public class BuildResultDTO {
             return builder.toString();
         } else {
             return "К сожалению, сборка номер " + buildNumber + " завершилась неудачно. ⛔️\n" +
-                    "Подробности можно найти на странице" + System.getenv("CI_BASE_URL") + "/browse/EGIP-BACK-" + buildNumber + "/log.";
+                    "Подробности можно найти на странице " + System.getenv("CI_BASE_URL") + "/browse/" + buildResultKey + "/log.";
         }
     }
 }

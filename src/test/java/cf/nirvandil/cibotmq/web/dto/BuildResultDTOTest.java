@@ -11,7 +11,7 @@ public class BuildResultDTOTest {
 
     @Test
     public void toStringTest() {
-        BuildResultDTO dto = new BuildResultDTO(true, 42L, new ChangesDTO(Collections.emptyList()));
+        BuildResultDTO dto = new BuildResultDTO(true, 42L, new ChangesDTO(Collections.emptyList()), null);
         assertThat(dto.toString())
                 .contains("Сборка номер 42 завершилась успешно");
         dto.setChanges(new ChangesDTO(Collections.singletonList(new ChangeDTO("testComment", null, null))));

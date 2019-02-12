@@ -23,7 +23,7 @@ public class ExplainBuildDispatcherTest {
         IApplicationChecker checker = mock(IApplicationChecker.class);
         IBambooClient client = mock(IBambooClient.class);
         when(client.getBuildResult(eq("EGIP-BACK"), eq(1142L)))
-                .thenReturn(Optional.of(new BuildResultDTO(true, 1142L, new ChangesDTO(Collections.emptyList()))));
+                .thenReturn(Optional.of(new BuildResultDTO(true, 1142L, new ChangesDTO(Collections.emptyList()), null)));
         when(ciBot.sendToDevChat(anyString()))
                 .thenReturn(true);
         when(checker.isUp())
